@@ -2,7 +2,7 @@
 Fuzztester spiders a website, and then continues on to spider a random link on that page
 
 #Prereq
-phantomjs on your machine
+phantomjs on your machine.   
 Get it from here http://code.google.com/p/phantomjs/
 
 #Launch
