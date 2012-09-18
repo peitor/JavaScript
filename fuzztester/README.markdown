@@ -1,5 +1,5 @@
 # About
-Fuzztester spiders a website, and then continues on to spider a random link on that page
+Fuzztester spiders a web page, and then continues on to spider a random link on that page
 
 #Prereq
 phantomjs on your machine.   
