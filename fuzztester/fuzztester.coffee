@@ -1,8 +1,10 @@
 #TODO
 # Follow links only on same domain
-# Ignore links like: "mailto:", "javascript:"
+# Ignore links like: "mailto:", "https:"
 # Truncate anchors '#'
-#
+
+#DONE
+# Exclude links like "javascript:"
 
 
 page = require('webpage').create()
@@ -11,7 +13,12 @@ system = require 'system'
 getRandomLink = (links) ->
   i = parseInt( Math.random() * (links.length+1))
   console.log '  ' +  i
-  return links[i]
+  newLink = links[i]
+  if newLink.substring(0, 11) == "javascript:"
+     return getRandomLink links
+  else
+    return newLink
+
 
 getAddress = (address) -> 
   console.log('Getting: ' + address + ' ... ')
