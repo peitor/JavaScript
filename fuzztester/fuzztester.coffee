@@ -1,12 +1,17 @@
 #TODO
-# Ignore links like: "mailto:", "javascript:"
 # Follow links only on same domain
+# Ignore links like: "mailto:", "javascript:"
 # Truncate anchors '#'
 #
 
 
 page = require('webpage').create()
 system = require 'system'
+
+getRandomLink = (links) ->
+  i = parseInt( Math.random() * (links.length+1))
+  console.log '  ' +  i
+  return links[i]
 
 getAddress = (address) -> 
   console.log('Getting: ' + address + ' ... ')
@@ -26,9 +31,7 @@ getAddress = (address) ->
           links.push(item.href)
         return links
       console.log(' Links in page: ' + results.length)
-      i = parseInt( Math.random() * (results.length+1))
-      console.log '  ' +  i
-      getAddress results[i]
+      getAddress getRandomLink results
 
 
 if system.args.length is 1
